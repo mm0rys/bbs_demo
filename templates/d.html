@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% block title %}
+{{ issue_item.title }}--详情
+{% endblock %}
+{% block head %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='/css/d.css') }}">
+{% endblock %}
+
+{% block body %}
+<h3 class="page-title">{{ issue_item.title }}</h3>
+    <p class="issue-info">
+    <span>作者: {{ issue_item.username }}</span>
+    <span>时间: {{ issue_item.create_time }}</span>
+    </p>
+    <hr>
+    <p class="issue-content">{{ issue_item.content }}</p>
+    <hr>
+    <h4>评论（0）：</h4>
+    <form action="{{ url_for('add_comment') }}" method="POST">
+    <div class="form-group">
+        <input type="text" placeholder="输入评论" name="comment" class="form-control">
+        <input type="hidden" name="issue_id" value="{{ issue_item.id }}">
+    </div>
+    <div class="form-group" style="text-align: right">
+        <button class="btn btn-primary" >立即评论</button>
+    </div>
+    </form>
+    <ul>
+    {% for comment in issue_item.comments %}
+        <h4     class="">{{ comment.author.username }}</h4><small>{{ comment.create_time }}</small>
+        <p style="padding: 10px">{{ comment.comment }}</p>
+
+        <hr>
+    {% endfor %}
+
+    </ul>
+{% endblock %}

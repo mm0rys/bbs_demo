@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block title %}
+首页
+{% endblock %}
+
+{% block head %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='/css/index.css') }}">
+{% endblock %}
+
+{% block body %}
+    <ul>
+    {% for issue in issues %}
+    <li>
+            <div class="avatar-group">DEMO</div>
+            <div class="issue-group">
+                <a href="{{ url_for('d', issue_id = issue.id) }}" class="issue-title">{{ issue.title }}</a>
+                <div class="issue-content">{{ issue.content }}</div>
+                <div class="info">
+                    <span class="issue-author">{{ issue.author.username }}</span>
+                    <span class="issue-datetime">{{ issue.create_time }}</span>
+                </div>
+            </div>
+        </li>
+
+    {% endfor %}
+    
+
+    </ul>
+{% endblock %}

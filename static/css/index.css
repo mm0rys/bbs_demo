@@ -1,0 +1,45 @@
+ul{
+    list-style: none;
+    padding-left: 0;
+
+}
+
+ul li{
+    overflow: hidden;
+    border-bottom: 1px solid #eee;
+
+}
+
+.avatar-group{
+    padding-top: 10px;
+    width : 60px;
+    height: 100%;
+    float: left;
+}
+
+.issue-group{
+    float: left;
+    width: 660px;
+    margin-left: 10px;
+    padding-top: 5%;
+}
+
+.issue-title a{
+    font-size: x-large;
+    color: #225599;
+
+}
+
+.issue-content{
+    font-size: small;
+}
+
+.info{
+    font-size: smaller;
+    text-align: right;
+    padding-right: 10px;
+}
+
+.info .issue-author{
+    margin-right: 10px;
+}

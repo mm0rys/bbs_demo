@@ -1,0 +1,13 @@
+.page-title{
+    text-align: center;
+}
+
+.form-container{
+    width: 600px;
+    margin: 0 auto;
+    -ms-text-align-last: right;
+    text-align: right;
+}
+.update{
+    align-items: right;
+}
